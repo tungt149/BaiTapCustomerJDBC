@@ -1,0 +1,27 @@
+package BaiTapCustomerJDBC.DataAccessLayer;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.JdbcConnection;
+
+public class CustomerDataAccessLayer {
+	private static String url = "jdbc:mysql://localhost:3306/customerdb";
+	private static String username = "root";
+	private static String password = "1234";
+
+	protected void connect() throws SQLException {
+		if (Connection == null || Connection.isClosed()) {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+
+			} catch (ClassNotFoundException e) {
+				throw new SQLException(e);
+			}
+			Connection = DriverManager.getConnection(url, username, password);
+
+		}
+	}
+
+}

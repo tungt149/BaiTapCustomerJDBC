@@ -1,0 +1,30 @@
+package BaiTapCustomerJDBC.DataAccessLayer;
+
+import java.sql.SQLException;
+
+import com.mysql.cj.jdbc.JdbcConnection;
+
+public class CustomerDataAccessLayer {
+	private int code;
+	private String name;
+	private String email;
+	private String adress;
+	public CustomerDataAccessLayer(int code, String name, String email, String adress) {
+		this.code = code;
+		this.name = name;
+		this.email = email;
+		this.adress = adress;
+	}
+protected void connect() throws SQLException{
+	if(JdbcConnection ==null || JdbcConnection.isClose()) {
+		try {
+			class.forName("com.mysql.cj.jdbc.Driver");
+		}catch (ClassNotFoundException e) {
+			throw new SQLException(e);
+			
+		}
+	}
+}
+
+
+}

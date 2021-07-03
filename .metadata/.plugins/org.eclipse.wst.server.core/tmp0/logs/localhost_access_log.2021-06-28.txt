@@ -1,0 +1,11 @@
+127.0.0.1 - - [28/Jun/2021:13:13:33 +0700] "GET / HTTP/1.1" 404 751
+127.0.0.1 - - [28/Jun/2021:13:13:35 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 500 1523
+127.0.0.1 - - [28/Jun/2021:13:13:35 +0700] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:14:18 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 200 2242
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:14:18 +0700] "GET /JavaJSPHV/styled.css HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:14:20 +0700] "GET /JavaJSPHV/visual.ico HTTP/1.1" 404 775
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:14:22 +0700] "GET /JavaJSPHV/customer/update?code=1 HTTP/1.1" 200 3019
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:22:34 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 500 1523
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:24:36 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 404 773
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:24:40 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 404 773
+0:0:0:0:0:0:0:1 - - [28/Jun/2021:13:46:56 +0700] "GET /JavaJSPHV/customer HTTP/1.1" 404 773

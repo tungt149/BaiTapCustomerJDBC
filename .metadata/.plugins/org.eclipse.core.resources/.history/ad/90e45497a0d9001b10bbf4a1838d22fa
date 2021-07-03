@@ -1,0 +1,24 @@
+package BaiTapCustomerJDBC.DataAccessLayer;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import BaiTapCustomerJDBC.Model.CustomerModel;
+
+public class CustomerDataAccessLayer {
+	
+
+	public int insert(CustomerModel customer) {
+		int result = -1;
+		try {
+			Connection connection = CustomerDataAccessLayer.getConnection();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return result;
+	}
+
+}

@@ -1,0 +1,32 @@
+package cybersoft.java12.jsp.servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+import cybersoft.java12.jsp.dbconection.mysqlconection;
+
+@WebServlet(name = "healthcheckservlet", urlPatterns = { "/hearth" })
+public class newcheckservlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Connection testconnection = mysqlconection.getConnection();
+		if (testconnection != null) {
+			resp.getWriter().append("Data Connection has been created Successfully");
+			}
+		else {
+			resp.getWriter().append("Data Connection has been created UnSuccessfully");
+		}
+		}
+		
+
+	}
+

@@ -1,0 +1,9 @@
+1625054735282	Move 'pom.xml' to 'META-INF'
+1625054855815	Move 'pom.xml' to 'WEB-INF'
+1625054993811	Move 'pom.xml' to 'src'
+1625055014610	Move 'pom.xml' to 'META-INF'
+1625055021266	Delete element
+1625058652620	Delete element
+1625058914235	Rename resource 'home.jsp'
+1625059213459	Rename package 'BaiTapCustomerJDBC.Util.urlUtils'
+1625059239740	Rename package 'BaiTapCustomerJDBC.urlUtils'

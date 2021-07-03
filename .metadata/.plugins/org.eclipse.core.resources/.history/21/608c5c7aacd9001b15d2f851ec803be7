@@ -1,0 +1,19 @@
+package BaiTapCustomerJDBC.Servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import BaiTapCustomerJDBC.Utils.path;
+import BaiTapCustomerJDBC.Utils.urlUtil;
+@WebServlet(urlPatterns = {urlUtil.CUSTOMER_HOMEs,urlUtil.CUSTOMER_ADD,urlUtil.CUSTOMER_UPDATE,urlUtil.CUSTOMER_DELETE})
+public class CustomerServlet extends HttpServlet{
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	req.getRequestDispatcher(path.HOME).forward(req, resp);
+}
+}

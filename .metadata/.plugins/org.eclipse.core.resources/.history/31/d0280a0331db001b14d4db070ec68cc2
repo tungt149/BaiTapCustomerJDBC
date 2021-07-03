@@ -1,0 +1,77 @@
+package BaiTapCustomerJDBC.Servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import BaiTapCustomerJDBC.DataAccessLayer.CustomerDataAccessLayer;
+import BaiTapCustomerJDBC.Utils.path;
+import BaiTapCustomerJDBC.Utils.urlUtil;
+import sun.awt.image.ImageWatched.Link;
+import BaiTapCustomerJDBC.Model.CustomerModel;
+
+@WebServlet(urlPatterns = { urlUtil.CUSTOMER_HOMEs, urlUtil.CUSTOMER_ADD, urlUtil.CUSTOMER_UPDATE,
+		urlUtil.CUSTOMER_DELETE })
+public class CustomerServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+
+		switch (path) {
+		case urlUtil.CUSTOMER_HOMEs:
+				getList(req,resp);
+			break;
+
+		case urlUtil.CUSTOMER_ADD:
+			getAdd(req,resp);
+			break;
+
+		case urlUtil.CUSTOMER_UPDATE:
+			getUpdate(req,resp);
+			break;
+
+		case urlUtil.CUSTOMER_DELETE:
+			getDelete(req,resp);
+			break;
+
+		default:
+			break;
+		}
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+		switch(path) {
+		case urlUtil.CUSTOMER_ADD:
+			postAdd(req,resp);
+			break;
+		case urlUtil.CUSTOMER_UPDATE:
+			postUpdate(req,resp);
+			break;
+		default:
+			break;
+		}
+		
+	}
+	private void getList(HttpServletRequest req, HttpServletResponse resp) {
+		Link<CustomerModel> customers = new ArrayList<CustomerModel>();
+		
+		
+	}
+
+	
+
+}

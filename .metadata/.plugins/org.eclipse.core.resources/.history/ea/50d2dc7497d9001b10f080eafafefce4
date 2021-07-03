@@ -1,0 +1,5 @@
+package BaiTapCustomerJDBC.Model;
+
+public class CustomerModel {
+
+}

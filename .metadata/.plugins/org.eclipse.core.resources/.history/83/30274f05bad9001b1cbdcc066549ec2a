@@ -1,0 +1,99 @@
+package BaiTapCustomerJDBC.Servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import BaiTapCustomerJDBC.DataAccessLayer.CustomerDataAccessLayer;
+import BaiTapCustomerJDBC.Utils.path;
+import BaiTapCustomerJDBC.Utils.urlUtil;
+
+
+@WebServlet(urlPatterns = { urlUtil.CUSTOMER_HOMEs, urlUtil.CUSTOMER_ADD, urlUtil.CUSTOMER_UPDATE,
+		urlUtil.CUSTOMER_DELETE })
+public class CustomerServlet extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+	private CustomerDataAccessLayer service;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+
+		switch (path) {
+		case urlUtil.CUSTOMER_HOMEs:
+			List<CustomerDataAccessLayer> customers = service.findAll();
+
+			req.setAttribute("customers", customers);
+
+			req.getRequestDispatcher(p).forward(req, resp);
+			break;
+
+		case UrlUtils.CUSTOMER_ADD:
+			req.setAttribute("customer", new Customer());
+			req.getRequestDispatcher(PathUtils.CUSTOMER_ADD).forward(req, resp);
+			break;
+
+		case UrlUtils.CUSTOMER_UPDATE:
+			int code = Integer.parseInt(req.getParameter("code"));
+			Customer customer = new Customer();
+			try {
+				Connection connection = MySqlConnection.getConnection();
+				String query = "SELECT code, name, address, email FROM customers WHERE code =?";
+				PreparedStatement statement = connection.prepareStatement(query);
+				statement.setInt(1, code);
+				ResultSet resultSet = statement.executeQuery(query);
+				while (resultSet.next()) {
+					customer.setCode(resultSet.getInt("code"));
+					customer.setName(resultSet.getString("name"));
+					customer.setEmail(resultSet.getString("email"));
+					customer.setAddress(resultSet.getString("address"));
+				}
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			req.setAttribute("customer", new Customer());
+			req.getRequestDispatcher(PathUtils.CUSTOMER_UPDATE).forward(req, resp);
+			break;
+
+		case UrlUtils.CUSTOMER_DELETE:
+			code = Integer.parseInt(req.getParameter("code"));
+			try {
+				Connection connection = MySqlConnection.getConnection();
+				String query = "DELETE  FROM customers WHERE code =?";
+				PreparedStatement statement = connection.prepareStatement(query);
+				statement.setInt(1, code);
+				statement.executeUpdate();
+				connection.close();
+			} catch (Exception e) {
+				e.printStackTrace();// TODO: handle exception
+			}
+			req.getRequestDispatcher(PathUtils.CUSTOMER_DASHBOARD).forward(req, resp);
+
+			break;
+
+		default:
+
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		this.doGet(req, resp);
+	}
+
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		service = new CustomerDataAccessLayer();
+	}
+}

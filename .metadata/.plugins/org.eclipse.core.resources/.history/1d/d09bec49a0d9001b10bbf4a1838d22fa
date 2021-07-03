@@ -1,0 +1,5 @@
+package BaiTapCustomerJDBC.MySqlConnection;
+
+public class MySqlConnection {
+
+}

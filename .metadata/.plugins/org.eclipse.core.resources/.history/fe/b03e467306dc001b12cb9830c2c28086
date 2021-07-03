@@ -1,0 +1,45 @@
+package BaiTapCustomerJDBC.Service;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import BaiTapCustomerJDBC.Model.CustomerModel;
+import  BaiTapCustomerJDBC.repository.CustomerReponsitory;
+
+
+public class CustomerService {
+	
+	
+		private List<CustomerModel> customers;
+		private CustomerReponsitory repository;
+		
+		public CustomerService() {
+			repository = new CustomerReponsitory();
+			customers = new LinkedList<CustomerModel>();
+			
+	}
+	
+	public List<CustomerModel> findAllCustomers(){
+		return repository.findAllCustomer();
+	}
+	
+	public CustomerModel findCustomerByCode(int code) {
+		
+		return repository.findCustomerByCode(code);
+	}
+	
+	public int deleteCustomerByCode(int code) {
+		return repository.deleteCustomerByCode(code);
+		
+	
+	}
+	
+	public void addNewCustomer(CustomerModel customer) {
+		repository.addNewCustomer(customer);
+	}
+
+	public void update(CustomerModel customerToUpdate, int codeToUpdate) {
+		repository.updateCustomer(customerToUpdate);
+}
+}
+

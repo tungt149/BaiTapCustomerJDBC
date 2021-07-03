@@ -1,0 +1,27 @@
+INDEX VERSION 1.131
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4053805600.index
+\CybersoftCRM\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\465452694.index
+\BaiTapCustomerJDBC\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4176976431.index
+\BaiTapServlet\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3267986809.index
+\Java12JSPGV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3719285872.index
+\JavaJSPHV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1822376997.index
+\CybersoftCRM\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3128763250.index
+\CybersoftJava12CrmAppGV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2083442766.index
+\Java12JSP\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1358319670.index
+\Java12JSPGV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3859009105.index
+\CybersoftJava12CrmAppGV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3489518785.index
+\CybersoftJava12CrmAppGV\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3860062160.index
+\CybersoftCRM\src\main\java
+C:\Users\admin\Desktop\BaiTapJSBcustomer\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\739210275.index
+\JavaJSPHV\src\main\java

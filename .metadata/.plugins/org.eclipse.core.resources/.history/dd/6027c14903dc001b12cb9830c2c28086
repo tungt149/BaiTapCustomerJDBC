@@ -1,0 +1,40 @@
+package BaiTapCustomerJDBC.Service;
+
+import java.util.List;
+
+
+
+public class CustomerService {
+	
+	private CustomerRepository repository;
+	
+	public CustomerService() {
+		repository = new CustomerRepository();
+	
+		
+	}
+	
+	public List<Customer> findAllCustomers(){
+		return repository.findAllCustomer();
+	}
+	
+	public Customer findCustomerByCode(int code) {
+		
+		return repository.findCustomerByCode(code);
+	}
+	
+	public int deleteCustomerByCode(int code) {
+		return repository.deleteCustomerByCode(code);
+		
+	
+	}
+	
+	public void addNewCustomer(Customer customer) {
+		repository.addNewCustomer(customer);
+	}
+
+	public void update(Customer customerToUpdate, int codeToUpdate) {
+		repository.updateCustomer(customerToUpdate);
+}
+}
+

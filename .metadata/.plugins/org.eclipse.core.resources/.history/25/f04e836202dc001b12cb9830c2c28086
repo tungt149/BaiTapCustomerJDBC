@@ -1,0 +1,5 @@
+package BaiTapCustomerJDBC.Service;
+
+public class CustomerService {
+
+}

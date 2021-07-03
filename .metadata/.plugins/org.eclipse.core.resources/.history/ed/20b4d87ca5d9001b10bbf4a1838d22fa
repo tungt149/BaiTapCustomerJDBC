@@ -1,0 +1,5 @@
+package BaiTapCustomerJDBC.Util.urlUtils;
+
+public class path {
+	public static final String HOME ="/WEB-INF/view/home.jsp";
+}

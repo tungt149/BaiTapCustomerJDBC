@@ -1,0 +1,10 @@
+127.0.0.1 - - [30/Jun/2021:19:16:08 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:19:16:09 +0700] "GET /Java12JSPGV/WEB-INF/classes/cybersoft/java12/jsp/dbconnection/MySqlConnection.java HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:19:16:32 +0700] "GET /BaiTapCustomerJDBC/WEB-INF/classes/BaiTapCustomerJDBC/DataAccessLayer/CustomerDataAccessLayer.java HTTP/1.1" 404 869
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:19:16:39 +0700] "GET /Java12JSPGV/WEB-INF/classes/cybersoft/java12/jsp/dbconnection/MySqlConnection.java HTTP/1.1" 404 682
+127.0.0.1 - - [30/Jun/2021:20:38:36 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:20:38:36 +0700] "GET /Java12JSPGV/UrlUtils.CUSTOMER_DASHBOARD HTTP/1.1" 404 794
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:20:38:45 +0700] "GET /Java12JSPGV/customer HTTP/1.1" 200 5241
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:20:38:45 +0700] "GET /Java12JSPGV/styles.css HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:20:38:49 +0700] "GET /Java12JSPGV/vscode.ico HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [30/Jun/2021:20:39:08 +0700] "GET /Java12JSPGV/WEB-INF/views/customer/customer-dashboard.jsp HTTP/1.1" 404 682

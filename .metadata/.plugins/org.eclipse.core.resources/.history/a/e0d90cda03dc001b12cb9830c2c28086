@@ -1,0 +1,137 @@
+package BaiTapCustomerJDBC.Servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.jasper.tagplugins.jstl.core.Catch;
+
+import BaiTapCustomerJDBC.Model.CustomerModel;
+import BaiTapCustomerJDBC.Service.CustomerService;
+import BaiTapCustomerJDBC.Utils.urlUtil;
+import BaiTapCustomerJDBC.Utils.PathUtil;
+
+
+
+
+@WebServlet(name = "customerServlet", urlPatterns = {urlUtil.CUSTOMER_ADD,urlUtil.CUSTOMER_DELETE,urlUtil.CUSTOMER_HOMEs,urlUtil.CUSTOMER_UPDATE
+})
+public class CustomerServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private CustomerService service;
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+		
+		switch (path) {
+		case urlUtil.CUSTOMER_HOMEs: 
+			
+			List<CustomerModel> customers = service.findAllCustomers();
+			
+			req.setAttribute("customers", customers);
+			
+			req.getRequestDispatcher(PathUtil.HOME)
+				.forward(req, resp);
+			break;
+			
+		case urlUtil.CUSTOMER_ADD:
+			req.getRequestDispatcher(PathUtil.ADD)
+			.forward(req, resp);
+			break;
+		
+		case urlUtil.CUSTOMER_UPDATE:
+			int codeToUpdate = Integer.parseInt(req.getParameter("code"));
+			
+			CustomerModel customerToUpdate = service.findCustomerByCode(codeToUpdate);
+			
+			req.setAttribute("customer", customerToUpdate);
+			
+			req.getRequestDispatcher(PathUtils.CUSTOMER_UPDATE)
+			.forward(req, resp);
+			break;
+			
+		case UrlUtils.CUSTOMER_DELETE:
+			int codeToBeDeleted = Integer.parseInt(req.getParameter("code"));
+			
+			service.deleteCustomerByCode(codeToBeDeleted);
+			
+			resp.sendRedirect(req.getContextPath() + UrlUtils.CUSTOMER_DASHBOARD);
+			break;
+		
+		default:
+			
+		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+		switch (path) {
+			case UrlUtils.CUSTOMER_ADD:
+				String name = req.getParameter("name");
+				String email = req.getParameter("email");
+				String address = req.getParameter("address");
+				try {
+					Connection connection = MySqlConnection.getConnection();
+					String query = "INSERT INTO customers (name,email,address) VALUES (?,?)";
+					PreparedStatement statement = connection.prepareStatement(query);
+					statement.setString(1, name);
+					statement.setString(2, email);
+					statement.setString(3, address);
+					statement.executeUpdate();
+					connection.close();
+					
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			//	service.addNewCustomer(newCustomer);
+				
+				resp.sendRedirect(req.getContextPath() + UrlUtils.CUSTOMER_DASHBOARD);
+				break;
+			case UrlUtils.CUSTOMER_UPDATE:
+				int code = Integer.parseInt(req.getParameter("code"));
+				 name = req.getParameter("name");
+				 email = req.getParameter("email");
+				 address = req.getParameter("address");
+				//Customer customerToUpdate = service.findCustomerByCode(codeToUpdate);
+				try {
+					Connection connection = MySqlConnection.getConnection();
+					String query = "UPDATE customers name =?,email =?,address =? WHERE code =?";
+					PreparedStatement statement = connection.prepareStatement(query);
+					statement.setString(1, name);
+					statement.setString(2, email);
+					statement.setString(3, address);																								
+					statement.setInt(4,code);
+					statement.executeUpdate();
+					connection.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				
+				// service.update(customerToUpdate, codeToUpdate);
+				
+				resp.sendRedirect(req.getContextPath() + UrlUtils.CUSTOMER_DASHBOARD);
+				
+		} 
+		
+			
+	}
+
+@Override
+public void init() throws ServletException {
+	service = new CustomerService();
+}
+}

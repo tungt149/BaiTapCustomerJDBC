@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpServer"/>
+    <fullyQualifiedTypeName name="org.apache.catalina.valves.JDBCAccessLogValve"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
+    <fullyQualifiedTypeName name="cybersoft.java12.jsp.model.Customer"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
+    <fullyQualifiedTypeName name="cybersoft.java12.jsp.dbconection.MySqlConnection"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.JdbcConnection"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.ast.ArrayAllocationExpression"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Servlet.CustomerServlet"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.DataAccessLayer.CustomerDataAccessLayer"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="sun.awt.image.ImageWatched.Link"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="cybersoft.java12.jsp.dbconnection.MySqlConnection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Catch"/>
+    <fullyQualifiedTypeName name="cybersoft.java12.jsp.service.CustomerService"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Service.CustomerService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.repository.Reponsitory"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.repository.CustomerReponsitory"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Utils.urlUtil"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Utils.path"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Utils.PathUtil"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.MySqlConnection.MySqlConnection"/>
+    <fullyQualifiedTypeName name="BaiTapCustomerJDBC.Model.CustomerModel"/>
+</qualifiedTypeNameHistroy>

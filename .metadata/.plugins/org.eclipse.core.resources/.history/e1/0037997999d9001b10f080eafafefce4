@@ -1,0 +1,5 @@
+package BaiTapCustomerJDBC.DataAccessLayer;
+
+public class CustomerDataAccessLayer {
+
+}

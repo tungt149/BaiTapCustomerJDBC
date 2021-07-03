@@ -1,0 +1,120 @@
+package BaiTapCustomerJDBC.Servlet;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import BaiTapCustomerJDBC.DataAccessLayer.CustomerDataAccessLayer;
+import BaiTapCustomerJDBC.Utils.path;
+import BaiTapCustomerJDBC.Utils.urlUtil;
+
+import BaiTapCustomerJDBC.Model.CustomerModel;
+import BaiTapCustomerJDBC.MySqlConnection.MySqlConnection;
+
+@WebServlet(urlPatterns = { urlUtil.CUSTOMER_HOMEs, urlUtil.CUSTOMER_ADD, urlUtil.CUSTOMER_UPDATE,
+		urlUtil.CUSTOMER_DELETE })
+public class CustomerServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = req.getServletPath();
+
+		switch (path) {
+		case urlUtil.CUSTOMER_HOMEs:
+			getList(req, resp);
+			break;
+//
+//		case urlUtil.CUSTOMER_ADD:
+//			getAdd(req, resp);
+//			break;
+//
+//		case urlUtil.CUSTOMER_UPDATE:
+//			getUpdate(req, resp);
+//			break;
+//
+//		case urlUtil.CUSTOMER_DELETE:
+//			getDelete(req, resp);
+//			break;
+
+		default:
+			break;
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		String path = req.getServletPath();
+//		switch (path) {
+//		case urlUtil.CUSTOMER_ADD:
+//			postAdd(req, resp);
+//			break;
+//		case urlUtil.CUSTOMER_UPDATE:
+//			postUpdate(req, resp);
+//			break;
+//		default:
+//			break;
+//		}
+
+	}
+
+	private void getList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		ArrayList<CustomerModel> customers = new ArrayList<CustomerModel>();
+		try {
+			Connection connection = MySqlConnection.getConnection();
+			String query = "SELECT code,name,email,address FROM customers";
+			PreparedStatement statement = connection.prepareStatement(query);
+			ResultSet resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				CustomerModel customer = new CustomerModel();
+				customer.setCode(resultSet.getInt("code"));
+				customer.setName(resultSet.getString("name"));
+				customer.setEmail(resultSet.getString("email"));
+				customer.setAddress(resultSet.getString("address"));
+				customers.add(customer);
+			}
+
+			connection.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		req.getRequestDispatcher(path.HOME).forward(req, resp);
+
+	}
+//
+//	private void getUpdate(HttpServletRequest req, HttpServletResponse resp) {
+//		
+//	}
+//	private void getDelete(HttpServletRequest req, HttpServletResponse resp) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//
+//	private void getAdd(HttpServletRequest req, HttpServletResponse resp) {
+//		// TODO Auto-generated method stub
+//
+//	}
+
+//	private void postUpdate(HttpServletRequest req, HttpServletResponse resp) {
+//		// TODO Auto-generated method stub
+//
+//	}
+//
+//	private void postAdd(HttpServletRequest req, HttpServletResponse resp) {
+//		// TODO Auto-generated method stub
+//
+//	}
+}

@@ -1,0 +1,46 @@
+package BaiTapCustomerJDBC.DataAccessLayer;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import BaiTapCustomerJDBC.Model.CustomerModel;
+
+public class CustomerDataAccessLayer {
+	private static String url = "jdbc:mysql://localhost:3306/customerdb";
+	private static String username = "root";
+	private static String password = "1234";
+
+	private static Connection connection = null;
+
+	public static Connection getConnection() {
+		if (connection != null)
+			return connection;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			connection = DriverManager.getConnection(url, username, password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("Can not find MySQL DB Driver!!!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Can not connect to database due to: invalid url or invalid credential");
+		}
+
+		return connection;
+	}
+
+	public int insert(CustomerModel customer) {
+		int result = -1;
+		try {
+			Connection connection = CustomerDataAccessLayer.getConnection();
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return result;
+	}
+
+}
